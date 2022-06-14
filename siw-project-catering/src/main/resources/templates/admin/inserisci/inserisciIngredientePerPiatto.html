@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8" />
+	<title>Inserimento Ingrediente per un Piatto</title>
+	<link rel="stylesheet" href="/css/piatto/aggiuntaIngrediente.css"
+</head>
+
+<body>
+	<div id="intestazione">
+		<h1>Aggiungi un nuovo Ingrediente per il Piatto</h1>
+	</div>
+	
+	<form th:action="@{'/admin/inserimentoIngrediente/' + ${piatto.id}}" th:method="POST" th:object="${ingrediente}">
+		
+			<div>
+				<div><strong><span>Seleziona un Ingrediente tra quelli attualmente disponibili:</span></strong></div>
+				<select name="ingrediente">
+					<option disabled=true>--Elenco degli Ingredienti--</option>
+					<option th:each="i : ${elencoIngredienti}" th:text="${i.nome}" th:value="${i.id}"/>
+				</select>
+			</div>
+			
+			<div>
+				<button type="submit">Inserisci</button>
+			</div>
+	
+	</form>
+	
+	<div id="riferimenti">
+		<div class="link">
+			<a th:href="@{'/admin/piatto/' + ${piatto.id}}">Torna alla Pagina del Piatto</a>
+		</div>
+		
+		<div id="link">
+			<a th:href="@{/default}">Torna alla Home</a>
+		</div>
+	</div>
+	
+	<footer>
+    	<div>Realizzato da Riccardo De Cesaris - Matricola: 547762</div>
+    	<div>Corso di Sistemi Informativi su Web, a.a. 2021-2022</div>
+    </footer>
+</body>
+</html>

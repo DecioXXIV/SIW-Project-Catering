@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+	<meta charset="UTF-8" />
+	<title>Registrazione Nuovo Utente</title>
+	<link rel="stylesheet" href="css/loginRegister.css" />
+</head>
+
+<body>
+	<div id="intestazione">
+    	<h1>Pagina di Registrazione</h1>
+	</div>
+    	
+    <div id="form">
+    	<form th:action="@{/register}" method="POST">
+    		<table>
+    			<tr>
+    				<td>Username: </td>
+    				<td><input type="text" th:field="*{credentials.username}"/></td>
+    				<td th:if="${#fields.hasErrors('credentials.username')}"
+    					th:errors="${credentials.username}"
+    					th:style="'color:red'"></td>
+    			</tr>
+    			
+    			<tr>
+    				<td>Password: </td>
+    				<td><input type="password" th:field="*{credentials.password}"/></td>
+    				<td th:if="${#fields.hasErrors('credentials.password')}"
+    					th:errors="${credentials.password}"
+    					th:style="'color:red'"></td>
+    			</tr>
+    			
+    			<tr>
+    				<td>Nome: </td>
+    				<td><input type="text" th:field="*{user.nome}"/></td>
+    				<td th:if="${#fields.hasErrors('user.nome')}"
+    					th:errors="${user.nome}"
+    					th:style="'color:red'"></td>
+    			</tr>
+    			
+    			<tr>
+    				<td>Cognome: </td>
+    				<td><input type="text" th:field="*{user.cognome}"/></td>
+    				<td th:if="${#fields.hasErrors('user.cognome')}"
+    					th:errors="${user.cognome}"
+    					th:style="'color:red'"></td>
+    			</tr>
+    			
+    			<tr>
+    				<td><button type="submit">Registrati</button></td>
+    			</tr>
+			</table>
+    	</form>
+	</div>
+	
+	<div id="tornaHome">
+		<a th:href="@{/index}">Torna alla Pagina Iniziale</a>
+	</div>
+	
+	<footer>
+    	<div>Realizzato da Riccardo De Cesaris - Matricola: 547762</div>
+    	<div>Corso di Sistemi Informativi su Web, a.a. 2021-2022</div>
+    </footer>
+</body>
+</html>

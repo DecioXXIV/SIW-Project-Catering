@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+ 	<meta charset="UTF-8" />
+	<title>Buffet rimosso con Successo</title>
+	<link rel="stylesheet" href="/css/buffet/aggiuntaRimozionePiattoConSuccesso.css" />
+</head>
+<body>
+
+    <div id="intestazione">
+    	<h1>Il Buffet selezionato è stato rimosso con Successo!</h1>
+    </div>
+    	
+    <div id="riferimenti">
+    	
+    	<div class="link">
+    		<a th:href="@{/admin/elencoBuffet}">Vai all'Elenco dei Buffet</a>
+    	</div>
+    	
+    	<div id="link">
+			<a th:href="@{/default}">Torna alla Home</a>
+   		</div>
+    </div>
+    
+    <footer>
+    	<div>Realizzato da Riccardo De Cesaris - Matricola: 547762</div>
+    	<div>Corso di Sistemi Informativi su Web, a.a. 2021-2022</div>
+    </footer>
+   
+</body>
+</html>

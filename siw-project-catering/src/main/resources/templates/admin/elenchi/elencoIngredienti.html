@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8" />
+	<title>Elenco Ingredienti Admin</title>
+	<link rel="stylesheet" href="/css/ingrediente/elencoIngredienti.css" />
+</head>
+<body>
+	<div id="intestazione">
+		<h1>Elenco degli Ingredienti</h1>
+		
+		<h3>In questa Pagina sono riportati tutti gli Ingredienti attualmente presenti nel Database.</h3>
+	</div>
+	
+		<table>
+			<strong>Ingredienti: </strong>
+			<tr th:each="ingrediente : ${elencoIngredienti}">
+				
+				<td>
+					<a th:href="@{'/admin/ingrediente/' + ${ingrediente.id}}" 
+					th:text="${ingrediente.nome}">Nome Ingrediente</a>
+				<td>		
+				
+				<td>
+					<a th:href="@{'/admin/cancellaIngrediente/' + ${ingrediente.id}}">Rimuovi dal Database</a>
+				</td>
+				
+			</tr>
+		</table>
+		
+	<div id="riferimenti">
+		<div id="link">
+			<a href="/default">Torna alla Home</a>
+		</div>
+	</div>
+	
+	<footer>
+    	<div>Realizzato da Riccardo De Cesaris - Matricola: 547762</div>
+    	<div>Corso di Sistemi Informativi su Web, a.a. 2021-2022</div>
+    </footer>
+</body>
+</html>

@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+ 	<meta charset="UTF-8" />
+	<title>Home Admin</title>
+	<link rel="stylesheet" href="css/home.css" />
+</head>
+<body>
+
+    <div id="intestazione">
+    	<h1>Pannello di Controllo dell'Amministratore</h1>
+    	
+    	<h3>Questa Pagina consente di effettuare gli inserimenti di nuovi Chef, Buffet, Piatti ed Ingredienti e di visionare quelli già esistenti nel Database.</h3>
+    </div>
+    	
+    <div id="riferimenti">
+    	<div class="link">
+    		<a th:href="@{/admin/chefForm}">Inserisci un nuovo Chef</a>
+    	</div>
+    	
+    	<div class="link">
+    		<a th:href="@{/admin/elencoChef}">Visualizza l'Elenco degli Chef</a>
+    	</div>
+    	
+    	<div class="link">
+    		<a th:href="@{/admin/buffetForm}">Inserisci un nuovo Buffet</a>
+    	</div>
+    	
+    	<div class="link">
+    		<a th:href="@{/admin/elencoBuffet}">Visualizza l'Elenco dei Buffet</a>
+    	</div>
+    	
+    	<div class="link">
+    		<a th:href="@{/admin/piattoForm}">Inserisci un nuovo Piatto</a>
+    	</div>
+    	
+    	<div class="link">
+    		<a th:href="@{/admin/elencoPiatti}">Visualizza l'Elenco dei Piatti</a>
+    	</div>
+    	
+    	<div class="link">
+    		<a th:href="@{/admin/ingredienteForm}">Inserisci un nuovo Ingrediente</a>
+    	</div>
+    	
+    	<div class="link">
+    		<a th:href="@{/admin/elencoIngredienti}">Visualizza l'Elenco degli Ingredienti</a>
+    	</div>
+    	
+    	<div id="link">
+			<a th:href="@{/logout}">Logout</a>
+   		</div>
+    </div>
+    
+    <footer>
+    	<div>Realizzato da Riccardo De Cesaris - Matricola: 547762</div>
+    	<div>Corso di Sistemi Informativi su Web, a.a. 2021-2022</div>
+    </footer>
+   
+</body>
+</html>

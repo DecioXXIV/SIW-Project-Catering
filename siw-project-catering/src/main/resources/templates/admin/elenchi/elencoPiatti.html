@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8" />
+	<title>Elenco Piatti Admin</title>
+	<link rel="stylesheet" href="/css/piatto/elencoPiatti.css" />
+</head>
+<body>
+	<div id="intestazione">
+		<h1>Elenco dei Piatti</h1>
+		
+		<h3>In questa Pagina sono riportati tutti i Piatti attualmente presenti nel Database.</h3>
+	</div>
+	
+	<table>
+		<strong>Piatti:</strong>
+		<tr th:each="piatto: ${elencoPiatti}">
+				
+			<td>
+				<a th:href="@{'/admin/piatto/' + ${piatto.id}}" 
+				th:text="${piatto.nome}">Nome Piatto</a>
+			<td>		
+				
+			<td>
+				<a th:href="@{'/admin/cancellaPiatto/' + ${piatto.id}}">Rimuovi dal Database</a>
+			</td>
+				
+		</tr>
+	</table>
+		
+	<div id="riferimenti">
+		<div id="link">
+			<a href="/default">Torna alla Home</a>
+		</div>
+	</div>
+	
+	<footer>
+    	<div>Realizzato da Riccardo De Cesaris - Matricola: 547762</div>
+    	<div>Corso di Sistemi Informativi su Web, a.a. 2021-2022</div>
+    </footer>
+</body>
+</html>

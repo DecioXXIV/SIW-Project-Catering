@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8" />
+	<title>Eliminazione Ingrediente</title>
+	<link rel="stylesheet" href="/css/ingrediente/cancellaIngrediente.css" />
+</head>
+<body>
+	<div id="intestazione">
+		<h1>Confermi l'Eliminazione?</h1>
+	</div>
+		
+	<div id="riferimenti">
+		<div class="link">
+			<a th:href="@{'/admin/confermaCancellazioneIngrediente/' + ${ingrediente.id}}">Conferma</a>
+		</div>
+		
+		<div class="link">
+			<a th:href="@{/admin/elencoIngredienti}">Torna all'elenco degli Ingredienti</a>
+		</div>
+	</div>
+	
+		<footer>
+    	<div>Realizzato da Riccardo De Cesaris - Matricola: 547762</div>
+    	<div>Corso di Sistemi Informativi su Web, a.a. 2021-2022</div>
+    </footer>
+</body>
+</html>

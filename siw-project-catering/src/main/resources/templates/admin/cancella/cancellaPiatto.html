@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8" />
+	<title>Eliminazione Piatto</title>
+	<link rel="stylesheet" href="/css/piatto/cancellaPiatto.css"
+</head>
+<body>
+	<div id="intestazione">
+		<h1>Confermi l'Eliminazione?</h1>
+	</div>
+		
+	<div id="riferimenti">
+		<div class="link">
+			<a th:href="@{'/admin/confermaCancellazionePiatto/' + ${piatto.id}}">Conferma</a>
+		</div>
+		
+		<div class="link">
+			<a th:href="@{/admin/elencoPiatti}">Torna all'elenco dei Piatti</a>
+		</div>	
+	</div>
+	
+	<footer>
+    	<div>Realizzato da Riccardo De Cesaris - Matricola: 547762</div>
+    	<div>Corso di Sistemi Informativi su Web, a.a. 2021-2022</div>
+    </footer>
+</body>
+</html>

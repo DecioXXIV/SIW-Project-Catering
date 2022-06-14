@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+ 	<meta charset="UTF-8" />
+	<title>Piatto Inserito con Successo</title>
+	<link rel="stylesheet" href="/css/piatto/inserimentoPiatto.css" />
+</head>
+<body>
+
+    <div id="intestazione">
+    	<h1>Il nuovo Piatto è stato inserito con successo!</h1>
+    	
+    </div>
+    	
+    <div id="riferimenti">
+    	
+    	<div class="link">
+    		<a th:href="@{/admin/elencoPiatti}">Vai all'Elenco dei Piatti</a>
+    	</div>
+    	
+    	<div id="link">
+			<a th:href="@{/default}">Torna alla Home</a>
+   		</div>
+    </div>
+    
+    <footer>
+    	<div>Realizzato da Riccardo De Cesaris - Matricola: 547762</div>
+    	<div>Corso di Sistemi Informativi su Web, a.a. 2021-2022</div>
+    </footer>
+   
+</body>
+</html>

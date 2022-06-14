@@ -1,0 +1,42 @@
+body {
+	color: #104E8B;
+}
+
+h1 {
+	text-align: center;
+}
+
+#intestazione {
+	border-bottom: 3px solid #104E8B;
+}
+
+form {
+	padding-top: 8px;
+	padding-bottom: 5px;
+	border-bottom: 3px solid #104E8B;
+}
+
+#riferimenti {
+	margin-top: 5px;
+}
+
+#link {
+	margin-top: 15px;
+}
+
+a:link, a:visited, a:active {
+	color: #104E8B;
+}
+
+a:hover {
+	color: #104E8B;
+	background-color: #DEB887;
+	text-decoration: underline;
+}
+
+footer {
+	text-align: center;
+	color: white;
+	margin-top: 50px;
+	background-color: #104E8B;
+}

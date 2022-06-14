@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8" />
+	<title>Dettagli Buffet Admin</title>
+	<link rel="stylesheet" href="/css/buffet/buffet.css" />
+</head>
+<body>
+    <div id="intestazione">
+    	<h1>Dettagli Buffet</h1>
+    	
+    	<h3>In questa Pagina sono riportati i dettagli del Buffet selezionato.</h3>
+    </div>
+    
+    <div id="dettagli">
+		<div>
+			<strong><span>Nome: </span><span th:text="*{buffet.nome}">Nome Buffet</span></strong>
+		</div>
+		
+		<div>
+			<strong><span>Realizzato dallo Chef: </span></strong>
+			<span th:if="${chef}">
+				<a th:href="@{'/admin/chef/' + *{chef.id}}" th:text="*{chef.nome} + ' ' + *{chef.cognome}">Chef</a>
+			</span>
+			<span th:unless="${chef}">DA SPECIFICARE</span>
+		</div>
+    </div>
+	
+	<div id="dati"> 
+		<strong>Elenco dei Piatti:</strong>
+			<ul>
+				<li th:each="piatto : ${elencoPiatti}">
+					<a th:href="@{'/admin/piatto/' + ${piatto.id} + '/' + ${buffet.id}}"
+						th:text="${piatto.nome}">Piatto</a>
+					<a th:href="@{'/admin/rimuoviPiatto/' + ${piatto.id} + '/' + ${buffet.id}}">Rimuovi</a>
+				</li>
+			</ul>
+	</div>
+	
+	<div id="riferimenti">
+		<div class="link">
+			<a th:href="@{'/admin/inserisciPiatto/' + ${buffet.id}}">Aggiungi un Piatto</a>
+		</div>
+		
+		<div class="link">
+			<a th:href="@{/admin/elencoBuffet}">Torna all'elenco dei Buffet</a>
+		</div>
+		
+		<div class="link">
+			<a th:href="@{/admin/elencoChef}">Torna all'elenco degli Chef</a>
+		</div>
+		
+		<div id="link">
+			<a th:href="@{/default}">Torna alla Home</a>
+		</div>		
+	</div>
+	
+	<footer>
+    	<div>Realizzato da Riccardo De Cesaris - Matricola: 547762</div>
+    	<div>Corso di Sistemi Informativi su Web, a.a. 2021-2022</div>
+    </footer>
+</body>
+</html>

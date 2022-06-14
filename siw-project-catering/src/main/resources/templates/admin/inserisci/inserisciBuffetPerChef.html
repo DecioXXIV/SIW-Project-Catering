@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8" />
+	<title>Inserimento Buffet per uno Chef</title>
+	<link rel="stylesheet" href="/css/chef/aggiuntaBuffet.css" />
+</head>
+
+<body>
+	<div id="intestazione">
+		<h1>Aggiungi un nuovo Buffet per lo Chef</h1>
+	</div>
+	
+	<form th:action="@{'/admin/inserimentoBuffet/' + ${chef.id}}" th:method="POST" th:object="${buffet}">
+		
+			<div>
+				<div><strong><span>Seleziona un Buffet tra quelli attualmente disponibili:</span></strong></div>
+				<select name="buffet">
+					<option disabled=true>--Elenco dei Buffet--</option>
+					<option th:each="b : ${elencoBuffet}" th:text="${b.nome}" th:value="${b.id}"/>
+				</select>
+			</div>
+			
+			<div>
+				<button type="submit">Inserisci</button>
+			</div>
+	
+	</form>
+	
+	<div id="riferimenti">
+		<div class="link">
+			<a th:href="@{'/admin/chef/' + ${chef.id}}">Torna alla Pagina dello Chef</a>
+		</div>
+		
+		<div id="link">
+			<a th:href="@{/default}">Torna alla Home</a>
+		</div>
+	</div>
+	
+	<footer>
+    	<div>Realizzato da Riccardo De Cesaris - Matricola: 547762</div>
+    	<div>Corso di Sistemi Informativi su Web, a.a. 2021-2022</div>
+    </footer>
+</body>
+</html>

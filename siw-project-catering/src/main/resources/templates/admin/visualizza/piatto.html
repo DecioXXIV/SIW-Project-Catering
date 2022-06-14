@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8" />
+	<title>Dettagli Piatto Admin</title>
+	<link rel="stylesheet" href="/css/piatto/piatto.css" />
+</head>
+<body>
+    <div id="intestazione">
+    	<h1>Dettagli Piatto</h1>
+    	
+    	<h3>In questa Pagina sono riportati i dettagli del Piatto selezionato.</h3>
+    </div>
+    
+    <div id="dettagli">
+		<div>
+			<strong><span>Nome: </span><span th:text="*{piatto.nome}">Nome Piatto</span></strong>
+		</div>
+	
+		<div>
+			<strong><span>Descrizione: </span><span th:text="*{piatto.descrizione}">Descrizione Piatto</span></strong>
+		</div>
+    </div>
+	
+	<div id="dati">
+		<strong>Elenco degli Ingredienti:</strong>
+		<ul>
+			<li th:each="ingrediente : ${elencoIngredienti}">
+				<a th:href="@{'/admin/ingrediente/' + ${ingrediente.id} + '/' + ${piatto.id}}"
+					th:text="${ingrediente.nome}">Ingrediente</a>
+				<a th:href="@{'/admin/rimuoviIngrediente/' + ${ingrediente.id} + '/' + ${piatto.id}}">Rimuovi</a>
+			</li>
+		</ul>
+	</div>
+			
+	<div id="riferimenti">
+		<div class="link">
+			<a th:href="@{'/admin/inserisciIngrediente/' + ${piatto.id}}">Aggiungi un Ingrediente</a>
+		</div>
+		
+		<div class="link" th:if="${buffet}">
+			<a th:href="@{'/admin/buffet/' + ${buffet.id}}">Torna al Buffet</a>
+		</div>
+		
+		<div class="link">
+			<a th:href="@{/admin/elencoPiatti}">Torna all'elenco dei Piatti</a>
+		</div>
+		
+		<div class="link">
+			<a th:href="@{/admin/elencoBuffet}">Torna all'elenco dei Buffet</a>
+		</div>
+
+		<div id="link">
+			<a th:href="@{/default}">Torna alla Home</a>
+		</div>		
+	</div>
+	
+	<footer>
+    	<div>Realizzato da Riccardo De Cesaris - Matricola: 547762</div>
+    	<div>Corso di Sistemi Informativi su Web, a.a. 2021-2022</div>
+    </footer>
+</body>
+</html>

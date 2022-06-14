@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8" />
+	<title>Inserimento Buffet</title>
+	<link rel="stylesheet" href="/css/buffet/buffetForm.css" />
+</head>
+
+<body>
+	<div id="intestazione">
+		<h1>Aggiungi un nuovo Buffet al Database</h1>
+	</div>
+	
+	<form th:action="@{/admin/buffet}" method="POST" th:object="${buffet}">
+		
+		<div th:if="${#fields.hasGlobalErrors()}">
+    		<p th:each="err : ${#fields.globalErrors()}" th:text="${err}" th:style="'color:red'">Messaggio Errore</p> 
+  		</div>
+  		
+		<table>
+			<tr>
+				<td><strong>Nome del Buffet: </strong></td>
+				<td><input type="text" th:field="*{nome}" /></td>
+				<td th:if="${#fields.hasErrors('nome')}"
+					th:errors="*{nome}"
+					th:style="'color:red'"></td>
+			</tr>
+			
+			<tr>
+				<td><strong>Descrizione: </strong></td>
+				<td><input type="text" th:field="*{descrizione}" /></td>
+			</tr>
+			
+			<tr>
+				<td>
+					<button type="submit">Registra</button>
+				</td>
+			</tr>
+		</table>
+	
+	</form>
+	
+	
+	<div id="riferimenti">
+		<div id="link">
+			<a th:href="@{/default}">Torna alla Home</a>
+		</div>
+	</div>
+	
+	<footer>
+    	<div>Realizzato da Riccardo De Cesaris - Matricola: 547762</div>
+    	<div>Corso di Sistemi Informativi su Web, a.a. 2021-2022</div>
+    </footer>
+</body>
+
+</html>

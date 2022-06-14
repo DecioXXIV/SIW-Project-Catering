@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8" />
+	<title>Dettagli Chef User</title>
+	<link rel="stylesheet" href="/css/chef/chef.css" />
+</head>
+<body>
+
+    <div id="intestazione">
+    	<h1>Dettagli Chef</h1>
+    	
+    	<h3>In questa Pagina sono riportati i dettagli dello Chef selezionato.</h3>
+    </div>
+    
+	<div id="dettagli">
+		<div>
+			<strong><span>Nome: </span><span th:text="${chef.nome}">Nome</span></strong>
+		</div>
+		
+		<div>
+			<strong><span>Cognome: </span><span th:text="${chef.cognome}">Cognome</span></strong>
+		</div>
+		
+		<div>
+			<strong><span>Nazionalità: </span><span th:text="${chef.nazionalita}">Nazionalita</span></strong>
+		</div>
+    </div>
+	
+	<div id="dati">
+		<strong>Buffet Realizzati:</strong>
+		<ul>
+			<li th:each="buffet : ${elencoBuffet}">
+				<a th:href="@{'/user/buffet' + '/' + ${buffet.id}}"
+					th:text="${buffet.nome}">Nome Buffet</a>
+			</li>
+		</ul>
+	</div>
+
+	<div id="riferimenti">
+		<div class="link">
+			<a th:href="@{/user/elencoChef}">Torna all'elenco degli Chef</a>
+		</div>
+		
+		<div id="link">
+			<a th:href="@{/default}">Torna alla Home</a>
+		</div>		
+	</div>
+	
+	<footer>
+    	<div>Realizzato da Riccardo De Cesaris - Matricola: 547762</div>
+    	<div>Corso di Sistemi Informativi su Web, a.a. 2021-2022</div>
+    </footer>
+</body>
+</html>

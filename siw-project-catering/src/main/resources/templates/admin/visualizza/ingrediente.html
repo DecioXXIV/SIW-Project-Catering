@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8" />
+	<title>Dettagli Ingrediente Admin</title>
+	<link rel="stylesheet" href="/css/ingrediente/ingrediente.css" />
+</head>
+<body>
+    <div id="intestazione">
+    	<h1>Dettagli Ingrediente</h1>
+    	
+    	<h3>In questa Pagina sono riportati i dettagli dell'Ingrediente selezionato.</h3>
+    </div>
+    
+    <div id="dettagli">
+		<div>
+			<strong><span>Nome: </span><span th:text="*{ingrediente.nome}">Nome Ingrediente</span></strong>
+		</div>
+	
+		<div>
+			<strong><span>Origine: </span><span th:text="*{ingrediente.origine}">Origine Ingrediente</span></strong>
+		</div>
+	
+		<div>
+			<strong><span>Descrizione: </span><span th:text="*{ingrediente.descrizione}">Descrizione Ingrediente</span></strong>
+		</div>
+    </div>
+			
+	<div id="riferimenti">		
+		<div class="link">
+			<a th:href="@{/admin/elencoIngredienti}">Torna all'elenco degli Ingredienti</a>
+		</div>
+		
+		<div class="link">
+			<a th:href="@{/admin/elencoPiatti}">Torna all'elenco dei Piatti</a>
+		</div>
+		
+		<div id="link">
+			<a th:href="@{/default}">Torna alla Home</a>
+		</div>		
+	</div>
+	
+	<footer>
+    	<div>Realizzato da Riccardo De Cesaris - Matricola: 547762</div>
+    	<div>Corso di Sistemi Informativi su Web, a.a. 2021-2022</div>
+    </footer>
+</body>
+</html>

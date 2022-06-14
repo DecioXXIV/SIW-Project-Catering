@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+	<meta charset="UTF-8" />
+	<title>Pagina Iniziale</title>
+	<link rel="stylesheet" href="css/index.css" />
+</head>
+<body>
+    <div id="intestazione">
+    	<h1>Benvenuto in <em>SIW Catering</em>!</h1>
+    	<h3>Offriamo solo il meglio per i vostri eventi, garantendovi un'esperienza culinaria unica con un viaggio attraverso le delizie realizzate dai migliori Chef stellati.</h3>
+    	
+    	<div class="immagine">
+    		<img src="images/Immagine Catering 1.jpg">
+    	</div>
+    </div>
+    	
+    	
+    <div>
+    	<div class="RegistratiAccedi">
+    		<strong>Registrati ed Accedi all'Applicazione per visionare la nostra offerta.</strong>
+    	</div>
+    	
+		<div class="link">
+			<a th:href="@{/login}">Accedi all'Applicazione</a>
+   		</div>
+   		
+		<div class="link">
+			<a th:href="@{/register}">Registrati come nuovo Utente</a>
+   		</div>
+    </div>
+    
+    <footer>
+    	<div>Realizzato da Riccardo De Cesaris - Matricola: 547762</div>
+    	<div>Corso di Sistemi Informativi su Web, a.a. 2021-2022</div>
+    </footer>
+</body>
+</html>

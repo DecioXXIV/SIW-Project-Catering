@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8" />
+	<title>Elenco Buffet</title>
+	<link rel="stylesheet" href="/css/buffet/elencoBuffet.css" />
+</head>
+<body>
+	<div id="intestazione">
+		<h1>Elenco dei Buffet</h1>
+		
+		<h3>In questa Pagina sono riportati tutti i Buffet attualmente disponibili.</h3>
+	</div>
+	
+	<table>
+		<strong>Buffet:</strong>
+		<tr th:each="buffet: ${elencoBuffet}">
+				
+			<td>
+				<a th:href="@{'/user/buffet/' + ${buffet.id}}" 
+				th:text="${buffet.nome}">Nome Buffet</a>
+			<td>		
+		</tr>
+		</table>
+		
+	<div id="riferimenti">
+		<div id="link">
+			<a href="/default">Torna alla Home</a>
+		</div>
+	</div>
+	
+	<footer>
+    	<div>Realizzato da Riccardo De Cesaris - Matricola: 547762</div>
+    	<div>Corso di Sistemi Informativi su Web, a.a. 2021-2022</div>
+    </footer>
+    
+</body>
+</html>
